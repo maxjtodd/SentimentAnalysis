@@ -1,5 +1,19 @@
-Hello! This project is in early stages at the moment.
+Max Todd
+Stage 4
 
-The dataset can be downloaded from: https://www.kaggle.com/datasets/bhavikjikadara/tweets-dataset
+# Running (reccomended)
+1. Download the conda environment using: $ conda create --name <env name you want> --file <env.txt>
 
-to ./data/twitter/tweets.csv
+2. Activate the environment with conda activate <env name you want>
+
+3. The dataset can be downloaded from: https://www.kaggle.com/datasets/bhavikjikadara/tweets-dataset
+    - Download to ./data/original directory
+
+4. Run preprocessing.py
+
+5. Free to use model.py at this point
+
+
+## Manual
+- Download the dataset
+- dataMods.ipynb has the preprocessing code needed, can save wherever you want from that point

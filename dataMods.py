@@ -2,11 +2,9 @@
 # Data preprocessing
 
 import pandas as pd
-
 import nltk
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
-from nltk.stem.wordnet import WordNetLemmatizer
 import re
 
 nltk.download('stopwords')
@@ -118,8 +116,9 @@ def loadDataset(path, textColumnName):
     return df
 
 
-# |%%--%%| <Vheb64xcfk|G0VOa28MzF>
-
-
-# Load the new dataset
-df = loadDataset('./data/original/train.csv', 'text')
+# |%%--%%| <Vheb64xcfk|k2syakQBc1>
+r"""°°°
+You can save the dataset obtained from the above function to use for models,
+or continue from here.
+°°°"""
+# |%%--%%| <k2syakQBc1|G0VOa28MzF>
