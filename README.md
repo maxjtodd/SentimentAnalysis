@@ -1,10 +1,9 @@
-Max Todd
-Stage 4
-
 # Overview
 
 The following is a sentiment analysis project. The dataset is a dataset full of tweets that are categorized as
 either positive, neutral, or negative.
+
+As of now, the model has a 0.629398 accuracy with the Naive Bayes model.
 
 # Installing Dataset
 ## Via kaggle API
@@ -19,7 +18,10 @@ $ kaggle datasets download -d abhi8923shriv/sentiment-analysis-dataset
 [Dataset page](https://www.kaggle.com/datasets/abhi8923shriv/sentiment-analysis-dataset/data)
 
 # Set Up (reccomended)
-1. Download the conda environment using: $ conda create --name <env name you want> --file <env.txt>
+1. Download the conda environment using: 
+```sh
+$ conda create --name <env name you want> --file <env.txt>
+```
 2. Activate the environment
 ```sh
 $ conda activate <env name you want>

@@ -10,8 +10,10 @@ from sklearn.pipeline import make_pipeline
 # |%%--%%| <tECa0hJTnV|8wYOMPCEGf>
 
 # Load the processed dataset (get from running preprocessing.py)
-traindf = pd.read_csv('./data/preprocessed/train.csv', encoding='unicode_escape')
-testDF = pd.read_csv('./data/preprocessed/test.csv', encoding='unicode_escape')
+traindf = pd.read_csv('./data/preprocessed/train.csv',
+                      encoding='unicode_escape')
+testDF = pd.read_csv('./data/preprocessed/test.csv',
+                     encoding='unicode_escape')
 
 # |%%--%%| <8wYOMPCEGf|ZmqSIREtN8>
 
@@ -21,7 +23,7 @@ testDF.dropna(inplace=True)
 
 # |%%--%%| <ZmqSIREtN8|J2LVgTkcTk>
 
-# Make and train model using the normalized text without stop words
+# Make and train Naive Bayes model using the normalized text without stop words
 model = make_pipeline(TfidfVectorizer(), MultinomialNB())
 model.fit(traindf['normalizeNoStop'], traindf['sentiment'])
 
@@ -35,7 +37,7 @@ print(f'{accuray}')
 
 # |%%--%%| <8Fjyc2TC6S|a5OQ7lKu9p>
 
-# Make and train model using the tokenized text
+# Make and train Naive Bayes model using the tokenized text
 model = make_pipeline(TfidfVectorizer(), MultinomialNB())
 model.fit(traindf['tokenized'], traindf['sentiment'])
 

@@ -1,3 +1,6 @@
+# Max Todd
+# Applied Machine Learning
+
 import pandas as pd
 import os.path
 from pathlib import Path
@@ -12,6 +15,16 @@ def removeStopWords(text):
     '''
     Remove stop words from the text to reduce bias for them
     ex. "is", "the", "and", etc.
+
+    Parameters
+    ----------
+    text: str
+     Text to remove stop words from
+
+    Returns
+    -------
+    str
+     text parameter without stop words
     '''
 
     # error check - return empty string on non string
@@ -32,6 +45,16 @@ def normalizeText(text):
     '''
     Remove unecessary characters and normalize to reduce variety
     as much as possible across different messages
+
+    Parameters
+    ----------
+    text: str
+     Text to normalize
+
+    Returns
+    -------
+    str
+     normalized text parameter
     '''
     text = re.sub(r'<.*?>', '', str(text))
     text = re.sub(r'[^a-zA-Z0-9\s]', '', str(text))
@@ -44,6 +67,16 @@ def normalizeText(text):
 def tokenizeText(text):
     '''
     Tokenize the text
+
+    Parameters
+    ----------
+    text: str
+     Text to tokenize
+
+    Returns
+    -------
+    str
+     tokenized text parameter
     '''
     tokens = word_tokenize(str(text))
     return tokens
@@ -119,32 +152,34 @@ def loadDataset(path, textColumnName, saveName, removeCols=[]):
     return df
 
 
-# NOTE: modify save path if you want a different saved path
-print('Working on training dataset...')
-loadDataset(path='./data/original/train.csv',
-            textColumnName='text',
-            saveName='train',
-            removeCols=[
-                'textID',
-                'selected_text',
-                'Time of Tweet',
-                'Age of User',
-                'Country',
-                'Population -2020',
-                'Land Area (Km²)',
-                'Density (P/Km²)'
-            ])
+# Modify and save datasets
+if __name__ == '__main__':
 
-print('\nWorking on testing dataset...')
-loadDataset(path='./data/original/test.csv',
-            textColumnName='text',
-            saveName='test',
-            removeCols=[
-                'textID',
-                'Time of Tweet',
-                'Age of User',
-                'Country',
-                'Population -2020',
-                'Land Area (Km²)',
-                'Density (P/Km²)'
-            ])
+    print('Working on training dataset...')
+    loadDataset(path='./data/original/train.csv',
+                textColumnName='text',
+                saveName='train',
+                removeCols=[
+                    'textID',
+                    'selected_text',
+                    'Time of Tweet',
+                    'Age of User',
+                    'Country',
+                    'Population -2020',
+                    'Land Area (Km²)',
+                    'Density (P/Km²)'
+                ])
+
+    print('\nWorking on testing dataset...')
+    loadDataset(path='./data/original/test.csv',
+                textColumnName='text',
+                saveName='test',
+                removeCols=[
+                    'textID',
+                    'Time of Tweet',
+                    'Age of User',
+                    'Country',
+                    'Population -2020',
+                    'Land Area (Km²)',
+                    'Density (P/Km²)'
+                ])
